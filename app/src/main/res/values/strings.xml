@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CALCULO DE JUROS</string>
+    <string name="Pagamento">Pagamento</string>
+    <string name="Vencimento">Vencimento</string>
+    <string name="Valor">Valor</string>
+    <string name="calcular">Calcular</string>
+    <string name="Prestacao">Prestacao</string>
+    <string name="PorConta">PorConta</string>
+    <string name="JurosPrest">Juros Prestação</string>
+    <string name="JurosPc">Juros PorConta</string>
+</resources>
