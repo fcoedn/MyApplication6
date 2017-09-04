@@ -23,7 +23,7 @@ class CalculoJuros : AppCompatActivity() {
        myToast.show()
 
 
-        fun countMe (view: View) {
+    fun countMe (view: View) {
             // Get the text view
             //val showCountTextView = findViewById(R.id.vlrPagar) as Number
             val showCountTextView = vlrPagar.text.toString()
