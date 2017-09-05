@@ -12,6 +12,13 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        // Anko
+        classpath 'org.jetbrains.anko:anko:0.10.1'
+        classpath 'org.jetbrains.anko:anko-sdk15:0.8.2'      // sdk19, sdk21, sdk23 are also available
+        classpath 'org.jetbrains.anko:anko-support-v4:0.8.2' // In case you need support-v4 bindings
+        classpath 'org.jetbrains.anko:anko-appcompat-v7:0.8.2' // For appcompat-v7 bindings
+        classpath 'org.jetbrains.anko:anko-common:0.8.3'
+
     }
 }
 
