@@ -3,7 +3,9 @@ package com.example.francisco.myapplication6
 import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -21,6 +23,16 @@ class CalculoJuros : AppCompatActivity() {
         //Toast.makeText(this, R.id.dtPagamento."Button 1",
         //Toast.LENGTH_LONG).show();
 
+        //val str = findViewById(R.id.text) as EditText
+        //val button = findViewById(R.id.btn) as Button
+        //result = findViewById(R.id.result) as TextView
+
+        btnCalcular.setOnClickListener {
+            val myToast1 = Toast.makeText(this, "Calculando123", Toast.LENGTH_SHORT)
+            myToast1.show()
+            txtPrestacao.text = "ok"
+            //this.vlrpagar.text  = Editable.Factory.getInstance().newEditable("")
+        }
 
     }
 
