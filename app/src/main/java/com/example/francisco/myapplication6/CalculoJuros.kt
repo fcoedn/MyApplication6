@@ -27,8 +27,10 @@ class CalculoJuros : AppCompatActivity() {
     fun Calcular(view: View) {
         // val myToast = Toast.makeText(this, message, duration);
         //val myToast = Toast.makeText(this, "Calculando...", Toast.LENGTH_SHORT)
-        val obj=findViewById<EditText>(R.id.vlrPagar)
-        Toast.makeText(this,obj.text, Toast.LENGTH_LONG).show()
+        if (R.id.vlrPagar is Number)  {
+            val obj = findViewById<EditText>(R.id.vlrPagar)
+            Toast.makeText(this, obj.text, Toast.LENGTH_LONG).show()
+        }
         val myToast = Toast.makeText(this, "Calculando...", Toast.LENGTH_SHORT)
         myToast.show()
         //Contextx("Hello world!")
