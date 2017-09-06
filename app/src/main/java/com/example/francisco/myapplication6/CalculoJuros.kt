@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.francisco.myapplication6.R.id.vlrPagar
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.*;
 import kotlinx.android.synthetic.main.activity_calculo_juros.*
@@ -27,10 +28,19 @@ class CalculoJuros : AppCompatActivity() {
         //val button = findViewById(R.id.btn) as Button
         //result = findViewById(R.id.result) as TextView
 
-        btnCalcular.setOnClickListener {
-            val myToast1 = Toast.makeText(this, "Calculando123", Toast.LENGTH_SHORT)
+            btnCalcular.setOnClickListener {
+                val myToast1 = Toast.makeText(this, "Calculando123", Toast.LENGTH_SHORT)
             myToast1.show()
-            txtPrestacao.text = "ok"
+               //- if (R.id.vlrPagar is Number) {
+                    val obj = findViewById<EditText>(R.id.vlrPagar)
+                    Toast.makeText(this, obj.text, Toast.LENGTH_LONG).show()
+                    val result: Int = 10
+                    txtPrestacao.text = obj.text
+                    txtPrestacao.setText("Prestacao: " +result.toString());
+              //-  } else {
+              //-      txtPrestacao.text = obj.text
+              //-  }
+            //- txtPrestacao.text = obj.text
             //this.vlrpagar.text  = Editable.Factory.getInstance().newEditable("")
         }
 
