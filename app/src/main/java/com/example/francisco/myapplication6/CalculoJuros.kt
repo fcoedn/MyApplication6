@@ -34,7 +34,8 @@ class CalculoJuros : AppCompatActivity() {
                //- if (R.id.vlrPagar is Number) {
                     val obj = findViewById<EditText>(R.id.vlrPagar)
                     Toast.makeText(this, obj.text, Toast.LENGTH_LONG).show()
-                    val result: Int = 10
+                    var result: Float = obj.text.toString().toFloat()
+                    result = result * 2
                     txtPrestacao.text = obj.text
                     txtPrestacao.setText("Prestacao: " +result.toString());
               //-  } else {
