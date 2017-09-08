@@ -38,7 +38,7 @@ class CalculoJuros : AppCompatActivity() {
 
                 if (varvlrPagar.text.toString().length == 0) {
                    Toast.makeText(this,"Dt Pagamento Incorreta", Toast.LENGTH_LONG).show()
-                    exitProcess(1)
+                    //return 0
                 }
                 val myToast1 = Toast.makeText(this, "Calculando123", Toast.LENGTH_SHORT)
                  myToast1.show()
