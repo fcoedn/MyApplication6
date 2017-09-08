@@ -48,6 +48,7 @@
         android:layout_marginLeft="15dp"
         android:inputType="numberDecimal" />
 
+
     <Button
         android:id="@+id/btnCalcular"
         android:layout_width="wrap_content"
@@ -56,6 +57,16 @@
         android:layout_marginTop="10dp"
         android:text="@string/calcular"
         android:onClick="Calcular"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn2tela"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tela2"
+        android:onClick="tela2"
         android:textSize="15sp" />
 
     <TextView
