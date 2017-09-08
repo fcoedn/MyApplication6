@@ -13,12 +13,15 @@ import com.example.francisco.myapplication6.R.id.vlrPagar
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.*;
 import kotlinx.android.synthetic.main.activity_calculo_juros.*
+import java.util.*
+import kotlin.system.exitProcess
 
 
 class CalculoJuros : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+       // dtPagamento.text = "20170508"
         setContentView(R.layout.activity_calculo_juros)
         //Context.toast("Hello world!")
         //Toast.makeText(this, R.id.dtPagamento."Button 1",
@@ -29,24 +32,46 @@ class CalculoJuros : AppCompatActivity() {
         //result = findViewById(R.id.result) as TextView
 
             btnCalcular.setOnClickListener {
+                var vardtPagamento = findViewById<EditText>(R.id.dtPagamento)
+                var vardtVencimento = findViewById<EditText>(R.id.dtVencimento)
+                var varvlrPagar = findViewById<EditText>(R.id.vlrPagar)
+
+                if (varvlrPagar.text.toString().length == 0) {
+                   Toast.makeText(this,"Dt Pagamento Incorreta", Toast.LENGTH_LONG).show()
+                    exitProcess(1)
+                }
                 val myToast1 = Toast.makeText(this, "Calculando123", Toast.LENGTH_SHORT)
-            myToast1.show()
-               //- if (R.id.vlrPagar is Number) {
-                    val obj = findViewById<EditText>(R.id.vlrPagar)
+                 myToast1.show()
+                 //- if (R.id.vlrPagar is Number) {
+                 if (isNumeric(R.id.vlrPagar.toString())) {
+                    var obj = findViewById<EditText>(R.id.vlrPagar)
                     Toast.makeText(this, obj.text, Toast.LENGTH_LONG).show()
                     var result: Float = obj.text.toString().toFloat()
                     result = result * 2
                     txtPrestacao.text = obj.text
                     txtPrestacao.setText("Prestacao: " +result.toString());
-              //-  } else {
-              //-      txtPrestacao.text = obj.text
-              //-  }
+                 } else {
+                    txtPrestacao.text = "Prestacao"
+                 }
             //- txtPrestacao.text = obj.text
             //this.vlrpagar.text  = Editable.Factory.getInstance().newEditable("")
         }
 
     }
 
+    // fun getCurrentTimeStamp(): String {
+    //    val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
+    //    val now = Date()
+    //    return simpleDateFormat.format(now)
+   // }
+
+    fun isNumeric(input: String): Boolean =
+            try {
+                input.toDouble()
+                true
+            } catch(e: NumberFormatException) {
+                false
+            }
     fun Calcular(view: View) {
         // val myToast = Toast.makeText(this, message, duration);
         //val myToast = Toast.makeText(this, "Calculando...", Toast.LENGTH_SHORT)
