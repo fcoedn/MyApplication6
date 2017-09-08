@@ -1,6 +1,7 @@
 package com.example.francisco.myapplication6
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -59,6 +60,24 @@ class CalculoJuros : AppCompatActivity() {
 
     }
 
+    fun tela2 (view: View) {
+        // Create an Intent to start the second activity
+        val randomIntent = Intent(this, MainActivity2::class.java)
+
+        // Get the current value of the text view.
+        val countString = vlrPagar.text.toString()
+
+        // Convert the count to an int
+        val count = Integer.parseInt(countString)
+
+        // Add the count to the extras for the Intent.
+       // randomIntent.putExtra(MainActivity2.TOTAL_COUNT, count)
+
+        // Start the new activity.
+        startActivity(randomIntent)
+    }
+
+
     // fun getCurrentTimeStamp(): String {
     //    val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
     //    val now = Date()
@@ -105,6 +124,9 @@ class CalculoJuros : AppCompatActivity() {
 
     }
 
+    companion object {
+        const val TOTAL_COUNT = "total_count"
+    }
 
     //class MainActivityUI : AnkoComponent<> {
     //    override fun createView(ui: AnkoContext<>) = with(ui) {
